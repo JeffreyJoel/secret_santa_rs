@@ -1,7 +1,19 @@
-[package]
+[workspace]
+members = [
+    "bin/*",
+    "crates/*",
+]
+default-members = ["bin/secret_santa"]
+resolver = "2"
+
+[workspace.package]
 name = "secret_santa"
 version = "0.1.0"
 edition = "2024"
 
-[dependencies]
+[workspace.dependencies]
 rand = "0.9.2"
+axum = "0.7.5"
+tokio = { version = "1.37.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

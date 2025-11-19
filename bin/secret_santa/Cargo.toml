@@ -1,0 +1,9 @@
+[package]
+name = "secret_santa"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+server = { path = "../../crates/server" }
+axum = {workspace = true}
+tokio = {workspace = true}
