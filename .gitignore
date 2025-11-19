@@ -1,0 +1,5 @@
+# Compiler files
+target/
+
+# Dotenv file
+.env
