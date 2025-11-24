@@ -12,8 +12,10 @@ pub fn shuffle(users: &mut Vec<String>) {
     }
 }
 
-pub fn generate_pairings(users: &Vec<String>) -> Vec<(String, String)> {
-    // TODO: Add an error check for empty arrays
+pub fn generate_pairings(users: &Vec<String>) -> Result<Vec<(String, String)>, &'static str> {
+    if users.is_empty() {
+        return Err("The list of users cannot be empty.");
+    }
 
     //create the givers iterator
     let givers = users.iter();
@@ -33,8 +35,8 @@ pub fn generate_pairings(users: &Vec<String>) -> Vec<(String, String)> {
     // zip: This combines the giver and receiver iterators and produces a (&String, &String) tuple
     // map: This transformes the string references to owned strings using the clone method
     // collect: This gathers all the tuples into a new vector
-    givers
+    Ok(givers
         .zip(receivers)
         .map(|(giver, receiver)| (giver.clone(), receiver.clone()))
-        .collect()
+        .collect())
 }

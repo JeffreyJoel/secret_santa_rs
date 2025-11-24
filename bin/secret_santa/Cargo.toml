@@ -5,5 +5,6 @@ edition = "2024"
 
 [dependencies]
 server = { path = "../../crates/server" }
+secret_santa_lib = { path = "../../crates/secret_santa_lib" }
 axum = {workspace = true}
 tokio = {workspace = true}
