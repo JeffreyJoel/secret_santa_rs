@@ -1,4 +1,4 @@
-# Secret Santa Generator
+# Not So Secret Santa
 
 This is a simple web service built in Rust to generate Secret Santa pairings. It provides a single API endpoint that accepts a list of participants and returns a randomly shuffled list of giver-receiver pairs.
 
